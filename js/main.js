@@ -1,7 +1,7 @@
 // ── NAVBAR SCROLL ──
 const navbar = document.querySelector('.navbar');
 window.addEventListener('scroll', () => {
-  navbar.classList.toggle('scrolled', window.scrollY > 40);
+  if (navbar) navbar.classList.toggle('scrolled', window.scrollY > 40);
 });
 
 // ── HAMBURGER MENU ──
@@ -11,39 +11,41 @@ if (hamburger && mobileNav) {
   hamburger.addEventListener('click', () => {
     mobileNav.classList.toggle('open');
   });
-  document.addEventListener('click', e => {
-    if (!navbar.contains(e.target)) mobileNav.classList.remove('open');
+  document.addEventListener('click', (e) => {
+    if (!navbar.contains(e.target) && !mobileNav.contains(e.target)) {
+      mobileNav.classList.remove('open');
+    }
   });
 }
 
 // ── ACTIVE NAV LINK ──
 const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-document.querySelectorAll('.nav-links a, .mobile-nav a').forEach(a => {
+document.querySelectorAll('.nav-links a, .mobile-nav a').forEach((a) => {
   if (a.getAttribute('href') === currentPage) a.classList.add('active');
 });
 
 // ── FADE-UP ON SCROLL ──
 const fadeEls = document.querySelectorAll('.fade-up');
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((e) => {
+    if (e.isIntersecting) {
+      e.target.classList.add('visible');
+      observer.unobserve(e.target);
+    }
+  });
 }, { threshold: 0.12 });
-fadeEls.forEach(el => observer.observe(el));
+fadeEls.forEach((el) => observer.observe(el));
 
 // ── CONTACT FORM ──
 const form = document.getElementById('contactForm');
 if (form) {
-  form.addEventListener('submit', async e => {
+  form.addEventListener('submit', async (e) => {
     e.preventDefault();
     const btn = form.querySelector('.submit-btn');
     const status = document.getElementById('formStatus');
     btn.textContent = 'SENDING...';
     btn.disabled = true;
 
-    // GoDaddy Email Marketing (newsletter signup)
-    const emailInput = form.querySelector('[name="email"]');
-    const nameInput  = form.querySelector('[name="name"]');
-
-    // Formspree submission
     try {
       const res = await fetch(form.action, {
         method: 'POST',
@@ -76,17 +78,20 @@ function animateCounter(el) {
   const step = Math.ceil(target / 60);
   const interval = setInterval(() => {
     current = Math.min(current + step, target);
-    el.textContent = current + suffix;
+    el.textContent = `${current}${suffix}`;
     if (current >= target) clearInterval(interval);
   }, 30);
 }
 
 const counterEls = document.querySelectorAll('[data-target]');
 if (counterEls.length) {
-  const counterObserver = new IntersectionObserver(entries => {
-    entries.forEach(e => {
-      if (e.isIntersecting) { animateCounter(e.target); counterObserver.unobserve(e.target); }
+  const counterObserver = new IntersectionObserver((entries) => {
+    entries.forEach((e) => {
+      if (e.isIntersecting) {
+        animateCounter(e.target);
+        counterObserver.unobserve(e.target);
+      }
     });
   }, { threshold: 0.5 });
-  counterEls.forEach(el => counterObserver.observe(el));
+  counterEls.forEach((el) => counterObserver.observe(el));
 }
