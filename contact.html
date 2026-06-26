@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Contact Us – Softwaresphere</title>
+<meta name="description" content="Get in touch with Softwaresphere for cybersecurity, software development, AI, and IT managed services."/>
+<link rel="stylesheet" href="css/style.css"/>
+<link rel="icon" href="images/logo.png"/>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="nav-logo">
+    <img src="images/logo.png" alt="Softwaresphere Logo"/>
+    <div class="nav-logo-text">SOFTWARESPHERE<span>SOFTWARE SOLUTIONS</span></div>
+  </div>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="cybersecurity.html">Cyber Security</a></li>
+    <li><a href="software.html">Software Dev</a></li>
+    <li><a href="ai-solutions.html">AI Solutions</a></li>
+    <li><a href="it-solutions.html">IT Services</a></li>
+    <li><a href="contact.html" class="nav-cta active">Contact Us</a></li>
+  </ul>
+  <button class="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+</nav>
+<nav class="mobile-nav">
+  <a href="index.html">Home</a>
+  <a href="cybersecurity.html">Cyber Security</a>
+  <a href="software.html">Software Dev</a>
+  <a href="ai-solutions.html">AI Solutions</a>
+  <a href="it-solutions.html">IT Services</a>
+  <a href="contact.html">Contact Us</a>
+</nav>
+
+<section class="page-hero">
+  <div class="page-hero-label">// GET IN TOUCH</div>
+  <h1>Let's Build Something <span>Exceptional</span></h1>
+  <p>Tell us about your project or challenge. Our team will respond within 24 hours with a tailored approach.</p>
+  <div class="breadcrumb"><a href="index.html">Home</a><span>/</span><span>Contact</span></div>
+</section>
+
+<section class="section">
+  <div class="section-inner">
+    <div class="contact-wrapper">
+
+      <!-- LEFT: Info -->
+      <div class="contact-info fade-up">
+        <h2>Talk to Our Experts</h2>
+        <p>Whether you need a security assessment, a new software platform, an AI proof-of-concept, or managed IT support — our team is ready to help you move fast.</p>
+
+        <div class="contact-item">
+          <div class="contact-item-icon">📧</div>
+          <div class="contact-item-text">
+            <label>EMAIL</label>
+            <span><a href="mailto:info@softwaresphere.in">info@softwaresphere.in</a></span>
+          </div>
+        </div>
+
+        <div class="contact-item">
+          <div class="contact-item-icon">🕐</div>
+          <div class="contact-item-text">
+            <label>RESPONSE TIME</label>
+            <span>Within 24 business hours</span>
+          </div>
+        </div>
+
+        <div class="contact-item">
+          <div class="contact-item-icon">🌐</div>
+          <div class="contact-item-text">
+            <label>SERVICES</label>
+            <span>Cyber Security · Software Dev · AI · IT Managed Services</span>
+          </div>
+        </div>
+
+        <div style="margin-top:2.5rem; padding:1.5rem; background:var(--dark-card); border:1px solid var(--dark-border); border-left:2px solid var(--gold);">
+          <div style="font-family:var(--font-mono);font-size:0.72rem;color:var(--gold);letter-spacing:0.15em;margin-bottom:0.5rem;">// FREE CONSULTATIONS</div>
+          <p style="font-size:0.85rem;color:var(--gray);line-height:1.7;">All initial consultations are complimentary. We'll assess your needs and outline a solution — with no obligation.</p>
+        </div>
+      </div>
+
+      <!-- RIGHT: Form -->
+      <!-- 
+        SETUP INSTRUCTIONS:
+        1. Go to https://formspree.io → create free account → new form
+        2. Replace YOUR_FORMSPREE_ID below with your form ID (e.g. xpwzgkab)
+        3. For GoDaddy Email Marketing: add your GoDaddy list signup URL in the JS
+      -->
+      <div class="fade-up">
+        <form id="contactForm" class="contact-form" action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name">FULL NAME *</label>
+              <input type="text" id="name" name="name" placeholder="John Smith" required/>
+            </div>
+            <div class="form-group">
+              <label for="email">EMAIL ADDRESS *</label>
+              <input type="email" id="email" name="email" placeholder="john@company.com" required/>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="company">COMPANY</label>
+              <input type="text" id="company" name="company" placeholder="Your Company Ltd"/>
+            </div>
+            <div class="form-group">
+              <label for="phone">PHONE NUMBER</label>
+              <input type="tel" id="phone" name="phone" placeholder="+91 98765 43210"/>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="service">SERVICE INTERESTED IN *</label>
+            <select id="service" name="service" required>
+              <option value="" disabled selected>Select a service area...</option>
+              <option value="Cyber Security">Cyber Security Services</option>
+              <option value="Software Development">Software Development & Modernization</option>
+              <option value="AI Solutions">AI Agents & Intelligent Solutions</option>
+              <option value="IT Managed Services">IT Solutions & Managed Services</option>
+              <option value="Multiple Services">Multiple Services</option>
+              <option value="General Inquiry">General Inquiry</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="message">TELL US ABOUT YOUR PROJECT *</label>
+            <textarea id="message" name="message" placeholder="Describe your challenge, project scope, timeline, or any questions you have..." required></textarea>
+          </div>
+
+          <!-- Newsletter opt-in for GoDaddy Email Marketing -->
+          <div class="form-group" style="display:flex;align-items:center;gap:0.75rem;">
+            <input type="checkbox" id="newsletter" name="newsletter" value="yes" style="width:auto;accent-color:var(--gold);cursor:pointer;"/>
+            <label for="newsletter" style="font-size:0.8rem;color:var(--gray);letter-spacing:0.05em;cursor:pointer;margin:0;">
+              Subscribe to our newsletter for technology insights and updates
+            </label>
+          </div>
+
+          <input type="hidden" name="_subject" value="New Enquiry – Softwaresphere Website"/>
+          <input type="text" name="_gotcha" style="display:none"/>
+
+          <button type="submit" class="btn btn-primary submit-btn" style="width:100%;justify-content:center;margin-top:0.5rem;padding:0.9rem;">
+            SEND MESSAGE →
+          </button>
+
+          <div id="formStatus" class="form-status"></div>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <img src="images/logo.png" alt="Softwaresphere"/><div class="footer-logo-text">SOFTWARESPHERE</div>
+        </div>
+        <p>Enterprise-grade technology solutions across cybersecurity, software engineering, AI, and managed IT infrastructure.</p>
+      </div>
+      <div class="footer-col"><h4>Services</h4><ul>
+        <li><a href="cybersecurity.html">Cyber Security</a></li>
+        <li><a href="software.html">Software Development</a></li>
+        <li><a href="ai-solutions.html">AI Solutions</a></li>
+        <li><a href="it-solutions.html">IT & Managed Services</a></li>
+      </ul></div>
+      <div class="footer-col"><h4>Company</h4><ul>
+        <li><a href="contact.html">Contact Us</a></li>
+        <li><a href="contact.html">Request a Quote</a></li>
+      </ul></div>
+      <div class="footer-col"><h4>Contact</h4><ul>
+        <li><a href="mailto:info@softwaresphere.in">info@softwaresphere.in</a></li>
+      </ul></div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 <span>Softwaresphere</span> (OPC) Private Limited. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+<script src="js/main.js"></script>
+</body>
+</html>
